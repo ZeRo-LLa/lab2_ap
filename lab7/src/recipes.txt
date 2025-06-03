@@ -1,0 +1,5 @@
+ironflint:flint and steel
+sticksstone:stone axe
+diamondssticks:diamond axe
+woodsstick:wood sword
+irons:bucket
