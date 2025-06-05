@@ -12,7 +12,7 @@ def read_edges_from_csv(filename):
     print_tree(edges)
     weight, mst = min_distanse(edges)
     if weight == -1:
-        print("MST неможливо побудувати.")
+        print("weight")
     else:
         print("Minimum Distance:", weight)
         print("MST Tree:")
@@ -51,8 +51,34 @@ def min_distanse(edges):
     for node in nodes:
         parent[node] = node
         rank[node] = 0
+    def merge_sort(arr):
+        if len(arr) <= 1:
+            return arr
 
-    edges.sort()
+        mid = len(arr) // 2
+        left = merge_sort(arr[:mid])
+        right = merge_sort(arr[mid:])
+
+        return merge(left, right)
+
+    def merge(left, right):
+        result = []
+        i = j = 0
+
+        while i < len(left) and j < len(right):
+            if left[i][0] <= right[j][0]: 
+                result.append(left[i])
+                i += 1
+            else:
+                result.append(right[j])
+                j += 1
+
+        result.extend(left[i:])
+        result.extend(right[j:])
+        return result
+
+
+    edges = merge_sort(edges)
     mst = []
     total_weight = 0
 
@@ -95,4 +121,4 @@ def print_tree(mst):
 
 
 
-read_edges_from_csv("lab8/src/communication_wells.csv")
+read_edges_from_csv("lab2_ap/lab8/src/communication_wells.csv")
