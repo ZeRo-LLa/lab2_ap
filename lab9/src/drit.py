@@ -21,4 +21,4 @@ def max_wire_length(w, heights):
 
     return round(max(dp[n-1][0], dp[n-1][1]), 2)
 
-print(max_wire_length())
+print(max_wire_length(2,[3,3,3]))

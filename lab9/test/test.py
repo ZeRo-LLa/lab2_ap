@@ -1,4 +1,4 @@
-from lab2_ap.lab9.src.drit import max_wire_length
+from lab9.src.drit import max_wire_length
 import unittest
 
 class TestMaxWireLength(unittest.TestCase):
